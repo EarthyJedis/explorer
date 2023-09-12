@@ -16,12 +16,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+@font-face {
+  font-family: "Rakkas";
+  src: local("Rakkas"),
+    url(../../../assets/Rakkas-Regular.ttf) format("truetype");
+}
+
 ps-top-bar {
   display: flex;
   justify-content: center;
   background: var(--ps-top-bar-bg-color);
   color: var(--ps-top-bar-text-color);
-
+  font-family: Rakkas Im !important;
   .mat-mdc-button.mat-unthemed {
     color: #000;
   }

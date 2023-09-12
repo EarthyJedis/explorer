@@ -26,6 +26,10 @@
   --ps-badge-bad-color: #ede544;
   --ps-text-error-color: #ede544;
 }
+@font-face {
+  font-family: "Rakkas";
+  src: local("Rakkas"), url(./assets/Rakkas-Regular.ttf) format("truetype");
+}
 
 button,
 html,
@@ -44,6 +48,7 @@ html {
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family: Rakkas !important;
 }
 
 a {

@@ -16,18 +16,24 @@
   ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<div class="network-{{ vars.network|async }}">
+<div class="network-{{ vars.network | async }}">
   <ps-top-bar></ps-top-bar>
   <div class="width-container network-explorer-container">
     <explorer-menu></explorer-menu>
     <router-outlet></router-outlet>
   </div>
   <div class="network-explorer-bottom-bar" *ngIf="showBottomBar">
-    <div><small *ngIf="subsquidRegistered | async">Data indexes provided by <a href="https://www.subsquid.io/" target="_blank">Subsquid</a>.</small></div>
-    <div><small>Polkascan Foundation offers no warranties or guarantees concerning the accuracy of the data provided.</small></div>
-    <div><small>Cookies are used. <a routerLink="/privacy-policy">Privacy Policy</a></small></div>
+    <div><small>Earthy Inc Testnet Explorer All Rights Reserved</small></div>
+    <div>
+      <small
+        >Cookies are used.
+        <a routerLink="/privacy-policy">Privacy Policy</a></small
+      >
+    </div>
     <div class="network-explorer-close-bottom-bar">
-      <button mat-icon-button (click)="showBottomBar = false"><mat-icon>close</mat-icon></button>
+      <button mat-icon-button (click)="showBottomBar = false">
+        <mat-icon>close</mat-icon>
+      </button>
     </div>
   </div>
 </div>

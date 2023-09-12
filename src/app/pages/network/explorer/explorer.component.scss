@@ -48,7 +48,6 @@
   transition: max-height 400ms, background-color 400ms;
 
   &.finalized {
-
   }
 
   &:hover {
@@ -77,11 +76,11 @@
   }
 
   .transaction {
-    background: #cf25ff;
+    background: #01ff0d;
   }
 
   .event {
-    background: #ff6482;
+    background: #ffe100;
   }
 }
 

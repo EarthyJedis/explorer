@@ -23,7 +23,7 @@ ps-top-bar {
   color: var(--ps-top-bar-text-color);
 
   .mat-mdc-button.mat-unthemed {
-    color: #fff;
+    color: #000;
   }
 }
 
@@ -92,6 +92,6 @@ ps-top-bar {
   padding-top: 6px;
 
   path {
-    fill: white;
+    fill: black;
   }
 }

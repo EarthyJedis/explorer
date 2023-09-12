@@ -68,7 +68,7 @@
 
 @keyframes sunrise-planet {
   from {
-    background-color: #643d70;
+    background-color: #cc9e13;
     background-position: center 0;
   }
   to {
@@ -82,14 +82,14 @@
   margin: 0;
   padding: 0;
   height: 150px;
-  background: radial-gradient(at 30% 150%, #cf25ff, #350659 50%, #000) bottom;
+  background: radial-gradient(at 30% 150%, #58ff25, #ffb700 50%, #000) bottom;
   background-size: 100% 400px;
   text-indent: -9999px;
   overflow: hidden;
   animation: sunrise-sky 5s ease-out;
 
   svg {
-    content: ' ';
+    content: " ";
     position: absolute;
     bottom: 30px;
     left: 30%;
@@ -99,7 +99,8 @@
 
   circle {
     opacity: 0;
-    animation: sunrise-circle 4s ease-out backwards, sunrise-circle-out 200ms 4.3s ease-out backwards;
+    animation: sunrise-circle 4s ease-out backwards,
+      sunrise-circle-out 200ms 4.3s ease-out backwards;
   }
 
   path:nth-of-type(1) {
@@ -107,9 +108,8 @@
   }
 
   path:nth-of-type(2) {
-    fill: #fa7878;
+    fill: #8cff00;
   }
-
 }
 
 .home-buttons-heading {
@@ -128,7 +128,7 @@
 }
 .home {
   padding-bottom: 40px;
-  background: #ff6482 linear-gradient(#fa7878 50px, #fa787800 150px);
+  background: #59ff00 linear-gradient(#ffcc00 50px, #fa787800 150px);
   color: #fff;
   animation: sunrise-planet 5s ease-out forwards;
 
@@ -146,7 +146,7 @@
     background-repeat: no-repeat;
     background-position: 50% calc(100% - 20px);
     background-color: #fff;
-    box-shadow: 0 2px 1px -1px #0003,0 1px 1px #00000024,0 1px 3px #0000001f;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
     color: #000;
     font-weight: bold;
     text-decoration: none;

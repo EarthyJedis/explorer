@@ -17,12 +17,12 @@
  */
 
 :root {
-  --ps-top-bar-bg-color: #0fd64f;
-  --ps-top-bar-text-color: #fff;
-  --ps-top-bar-logo-text-color: #fff;
-  --ps-top-bar-logo-dot-color: #0fd64f;
+  --ps-top-bar-bg-color: #fcd200;
+  --ps-top-bar-text-color: #000;
+  --ps-top-bar-logo-text-color: #000;
+  --ps-top-bar-logo-dot-color: #fcd200;
   --ps-grid-column-padding: 10px;
-  --ps-badge-good-color: #008000;
+  --ps-badge-good-color: #fcd200;
   --ps-badge-bad-color: #ede544;
   --ps-text-error-color: #ede544;
 }
@@ -34,7 +34,7 @@ select,
 textarea {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
-  color: #350659;
+  color: black;
 }
 
 body,
@@ -204,7 +204,7 @@ mat-divider.mat-divider {
 }
 
 .mono {
-  font-family: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New",
+  font-family: Rakkas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New",
     Courier, monospace;
   opacity: 66%;
 }

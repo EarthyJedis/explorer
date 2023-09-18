@@ -146,10 +146,10 @@ attribute-struct {
   thead {
     th {
       text-align: left;
-      color: rgba(0, 0, 0, 0.54);
+      color: white;
       font-size: 12px;
       font-weight: 500;
-      border-bottom-color: rgba(0, 0, 0, 0.12);
+      border-bottom-color: white;
     }
   }
 
@@ -161,14 +161,14 @@ attribute-struct {
 
   td,
   th {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+    border-bottom: solid 1px white;
     padding: 0.5rem;
   }
 }
 
 .detail-table--label-cell {
   text-align: left;
-  color: rgba(0, 0, 0, 0.75);
+  color: white;
   font-size: 12px;
   font-weight: 500;
   min-width: 8rem;

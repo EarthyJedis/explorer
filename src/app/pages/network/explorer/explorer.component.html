@@ -19,7 +19,7 @@
 <ng-container *ngIf="ns.currentNetwork | async">
   <div class="bgwhite">
     <ng-container *ngIf="(blocks | async)?.length === 0">
-      <p>Waiting for blocks...</p>
+      <p class="colorwhite">Waiting for blocks...</p>
       <mat-progress-bar mode="buffer"></mat-progress-bar>
     </ng-container>
     <div class="last-block" *ngIf="((latestBlockNumber | async) || 0) > 0">
@@ -67,8 +67,9 @@
       />
 
       <p>
-        Welcome to Earthy's Block Explorer, where we're not just redefining
-        digital transactions but fundamentally shifting humanity forward.
+        Welcome to Earthy's Block Explorer, we are not just redefining the type
+        of impact web3 & blockchain have on people but fundamentally shifting
+        humanity forward.
       </p>
 
       <p>

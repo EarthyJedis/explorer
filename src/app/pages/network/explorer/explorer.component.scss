@@ -315,8 +315,10 @@ p {
 .bgwhite {
   height: 200px;
 
-  color: black !important;
   height: 200px;
   background: black;
+  color: white !important;
+}
+.colorwhite {
   color: white !important;
 }

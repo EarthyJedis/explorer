@@ -17,16 +17,26 @@
   -->
 
 <ng-container *ngIf="ns.currentNetwork | async">
-
   <form [formGroup]="searchForm" (ngSubmit)="submitSearch()">
     <mat-form-field class="search" appearance="outline">
       <mat-label>Search for account, block, extrinsic</mat-label>
-      <input matInput formControlName="search" placeholder="Account address, block number or hash, extrinsic id or hash">
-      <button mat-icon-button matSuffix type="submit" [attr.aria-label]="'Search'">
+      <input
+        matInput
+        formControlName="search"
+        placeholder="Account address, block number or hash, extrinsic id or hash"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        type="submit"
+        [attr.aria-label]="'Search'"
+      >
         <mat-icon>search</mat-icon>
       </button>
       <mat-error *ngIf="searchForm.controls['search'].hasError('wrongNetwork')">
-        This address does not belong to the {{ns.currentNetwork | async}} network. Do you need to switch to another network?
+        This address does not belong to the
+        {{ ns.currentNetwork | async }} network. Do you need to switch to
+        another network?
       </mat-error>
       <mat-error *ngIf="searchForm.controls['search'].hasError('wrongFormat')">
         Please enter a valid account address or block number.
@@ -34,21 +44,94 @@
     </mat-form-field>
   </form>
 
+  <div class="wrap animate pop">
+    <div class="overlay">
+      <div class="overlay-content animate slide-left delay-2">
+        <h1 class="animate slide-left pop delay-4">Earthy</h1>
+        <p
+          class="animate slide-left pop delay-5"
+          style="color: white; margin-bottom: 2.5rem"
+        >
+          <em>Be The Change</em>
+        </p>
+      </div>
+      <div class="image-content animate slide delay-5"></div>
+    </div>
+    <div class="text">
+      <img
+        class="inset"
+        src="https://i.ibb.co/YWfXw6R/logo.png"
+        alt="Earthy's Logo"
+      />
+
+      <p>
+        Welcome to Earthy's Block Explorer, where we're not just redefining
+        digital transactions but fundamentally shifting humanity forward.
+      </p>
+
+      <p>
+        As we finalize Earthy's development, we're thrilled to give you a sneak
+        peek through our testnet. Here, you'll witness a layer-one blockchain
+        designed for both scalability and real-world impact.
+      </p>
+
+      <p>
+        Our immutable ledger brings unprecedented transparency to charitable
+        contributions. Now you can track every donation from donor to
+        beneficiary.
+      </p>
+
+      <p>
+        Earthy also equips humanitarian organizations with the tools they need
+        for humanitarian initiatives, from advanced smart contracts to
+        decentralized apps.
+      </p>
+
+      <p>
+        We're proud to introduce Proof of Planting, Earthy's proprietary
+        consensus mechanism. This groundbreaking feature achieves consensus by
+        funding real-world environmental projects.
+      </p>
+
+      <p>
+        We're in the final stages of launching our mainnet. Be a part of the
+        transition as we move from testnet to a fully functional product capable
+        of societal change.
+      </p>
+
+      <p>
+        Become an early adopter, impact the world, and join a community of
+        visionaries, humanitarians, and thought leaders.
+      </p>
+
+      <p>
+        <a href="https://discord.gg/eyFkPaDe" target="_blank"
+          >Join Our Community</a
+        >
+      </p>
+    </div>
+  </div>
   <ng-container *ngIf="(blocks | async)?.length === 0">
     <p>Waiting for blocks...</p>
     <mat-progress-bar mode="buffer"></mat-progress-bar>
   </ng-container>
 
   <div class="last-block" *ngIf="((latestBlockNumber | async) || 0) > 0">
-    {{latestBlockNumber | async}}
+    {{ latestBlockNumber | async }}
   </div>
 
-  <div class="blocks" [@blocksAnimation]="(latestBlockNumber | async)">
-    <div class="block-outer" *ngFor="let block$ of (blocks | async)">
+  <div class="blocks" [@blocksAnimation]="latestBlockNumber | async">
+    <div class="block-outer" *ngFor="let block$ of blocks | async">
       <ng-container *ngIf="block$ | async as block">
-        <a class="block-inner" [class.finalized]="block.finalized" [routerLink]="'block/' + block.number" [@blockContentAnimation]="block.extrinsics.length">
+        <a
+          class="block-inner"
+          [class.finalized]="block.finalized"
+          [routerLink]="'block/' + block.number"
+          [@blockContentAnimation]="block.extrinsics.length"
+        >
           <span class="number">
-            {{block.number.toString().slice(0, -2)}}<strong>{{block.number.toString().slice(-2)}}</strong>
+            {{ block.number.toString().slice(0, -2)
+            }}<strong>{{ block.number.toString().slice(-2) }}</strong>
           </span>
           <span class="transaction" *ngFor="let i of block.extrinsics"></span>
           <span class="event" *ngFor="let i of block.events"></span>
@@ -56,12 +139,26 @@
       </ng-container>
     </div>
   </div>
-
 </ng-container>
 
-<p *ngIf="(ns.currentNetwork | async) === '' &&
-          ((pa.substrateRpcRegistered | async) && (pa.substrateRpcConnected | async) === false || (pa.substrateRpcRegistered | async) === false)">
+<p
+  *ngIf="
+    (ns.currentNetwork | async) === '' &&
+    (((pa.substrateRpcRegistered | async) &&
+      (pa.substrateRpcConnected | async) === false) ||
+      (pa.substrateRpcRegistered | async) === false)
+  "
+>
   Initializing...
 </p>
 
-<p *ngIf="(pa.substrateRpcRegistered | async) === false && (pa.explorerRegistered | async) === false && (pa.subsquidRegistered | async) === false" style="color: red">Connection error! Please try again later or try a different endpoint.</p>
+<p
+  *ngIf="
+    (pa.substrateRpcRegistered | async) === false &&
+    (pa.explorerRegistered | async) === false &&
+    (pa.subsquidRegistered | async) === false
+  "
+  style="color: red"
+>
+  Connection error! Please try again later or try a different endpoint.
+</p>

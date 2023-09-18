@@ -38,6 +38,37 @@
       </g>
     </svg>
   </h1>
+  <main
+    mv-app="tabs"
+    mv-bar="no-login"
+    mv-storage="https://github.com/DmitrySharabin/mavo-tabs-widget"
+  >
+    <h2 property="headline"></h2>
+    <section class="tabs" style="--count: [count(tab)]">
+      <details
+        property="tab"
+        mv-multiple
+        open="[open]"
+        mv-action="set(open.$all, false), set(open, true)"
+      >
+        <meta property="open" />
+
+        <summary property="title">
+          <img class="icon" src="[image]" alt="Icon" />
+          <span property="text"></span>
+        </summary>
+
+        <section property="content">
+          <h3 property="headline"></h3>
+          <img property="image" src="" alt="Illustration for [headline]" />
+          <p property="text"></p>
+          <a property="url" href="#">
+            <span property="destination"></span>
+          </a>
+        </section>
+      </details>
+    </section>
+  </main>
 
   <div class="width-container">
     <div class="home-groups">

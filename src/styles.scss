@@ -18,7 +18,7 @@
 
 :root {
   --ps-top-bar-bg-color: #fcd200;
-  --ps-top-bar-text-color: #000;
+  --ps-top-bar-text-color: black;
   --ps-top-bar-logo-text-color: #000;
   --ps-top-bar-logo-dot-color: #fcd200;
   --ps-grid-column-padding: 10px;
@@ -38,7 +38,7 @@ select,
 textarea {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
-  color: black;
+  color: white;
 }
 
 body,
@@ -217,7 +217,6 @@ mat-divider.mat-divider {
 .width-container {
   margin: 0 auto;
   width: 100%;
-  max-width: 1260px;
+
   box-sizing: border-box;
-  padding: 0 20px;
 }
